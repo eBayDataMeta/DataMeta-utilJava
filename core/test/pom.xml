@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.ebaydatameta</groupId>
+    <artifactId>util-test</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>DataMeta Utilities for Testing/Java</name>
+    <description>DataMeta utilities for testing, including but not limited to unit tests.
+        Make sure that you add dependency on this project in the test scope!
+    </description>
+
+    <parent>
+        <groupId>com.github.ebaydatameta</groupId>
+        <artifactId>dataMetaTopLevelPom</artifactId>
+        <version>1.0.1</version>
+        <relativePath>../../maven/root</relativePath>
+    </parent>
+
+    <developers>
+        <developer>
+            <id>michaelb</id>
+            <name>Michael Bergens</name>
+            <email>michael.bergens@gmail.com</email>
+            <organization>GitHub</organization>
+            <roles>
+                <role>Architect</role>
+                <role>Programmer</role>
+                <role>SDT</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <log4j.version>2.7</log4j.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.ebaydatameta</groupId>
+            <artifactId>util-guava</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <!-- http://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version> 
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version> 
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version> 
+        </dependency>
+        <dependency>
+            <!-- http://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+    </dependencies>
+</project>

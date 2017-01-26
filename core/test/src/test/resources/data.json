@@ -1,0 +1,16 @@
+[
+  {"firstName": "John", "lastName": "Doe",
+    "age": 20, "salary": 70000.0,
+      "currency": "GBP"
+  }
+  ,
+  {
+    "firstName": "Mary", "lastName": "Smith", "age": 21, "salary": 85000.0, "currency": "USD"
+  }
+,
+{"firstName": "Johann", "lastName": "Kurz", "age": 55, "salary": 48000.0, "currency": "EUR"}
+,
+  { "firstName": "Zorg", "lastName": "Xqewooh", "age": 516, "salary": 12000.0,
+      "currency": "GALAXY_BUCKAZOID"
+  }
+]

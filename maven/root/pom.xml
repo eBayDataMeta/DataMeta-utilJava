@@ -1,0 +1,227 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.ebaydatameta</groupId>
+    <artifactId>dataMetaTopLevelPom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.1</version>
+    <name>Top Level POM for the DataMeta Project</name>
+    <description>See the URL for the project page</description>
+    <url>https://github.com/eBayDataMeta</url>
+
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <distribution>repo</distribution>
+            <url>https://github.com/eBayDataMeta/DataMeta/blob/master/LICENSE.md</url>
+        </license>
+    </licenses>
+
+	<developers>
+		<developer>
+			<name>Michael Bergens</name>
+			<email>michael.bergens@gmail.com</email>
+			<organization>github</organization>
+			<organizationUrl>https://github.com/mub</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+        <connection>scm:git:https://github.com/eBayDataMeta/DataMeta-utilJava.git</connection>
+		<developerConnection>scm:git:git@github.com:eBayDataMeta/DataMeta-utilJava.git</developerConnection>
+		<url>https://github.com/eBayDataMeta/DataMeta-utilJava</url>
+	</scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.4</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <extensions>
+            <extension>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.wagon/wagon-webdav-jackrabbit -->
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>2.10</version>
+            </extension>
+        </extensions>
+        <plugins>
+			<!--plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh-release</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin-->
+            <plugin>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+            <plugin>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+        </plugins>
+    </build>
+    <reporting>
+        <plugins>
+
+            <plugin>
+                <!-- http://gleclaire.github.io/findbugs-maven-plugin/ 
+                     http://mvnrepository.com/artifact/org.codehaus.mojo/findbugs-maven-plugin -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.3</version>
+            </plugin>
+            <plugin>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-checkstyle-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.17</version>
+            </plugin>
+            <plugin>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+                    <show>protected</show>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.6</version>
+                <configuration>
+
+                    <reportPlugins>
+                        <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                            <version>2.9</version>
+                            <configuration>
+                                <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                                <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                            </configuration>
+                            <reports>
+                                <report>javadoc</report>
+                                <report>surefire</report>
+                            </reports>
+                        </plugin>
+                        <plugin>
+                            <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>2.10.4</version>
+                        </plugin>
+                    </reportPlugins>
+                </configuration>
+
+            </plugin>
+            <plugin>
+                <!-- http://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.9</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency> <!-- can get source from http://code.google.com/p/jsr-305/source/checkout -->
+            <!-- http://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+    </dependencies>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh-snapshot</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh-release</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+	</distributionManagement>
+</project>

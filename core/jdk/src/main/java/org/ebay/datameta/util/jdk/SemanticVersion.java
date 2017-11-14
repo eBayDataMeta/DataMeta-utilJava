@@ -16,6 +16,7 @@ import static java.util.stream.Collectors.joining;
  * Extended encapsulation of the <a href="http://semver.org" target=_blank>Semantic Version</a> as
  * <tt>Major</tt>.<tt>Minor</tt>.<tt>Update</tt>[.<tt>build</tt>], with the <tt>build</tt> item optional.
  *
+ * After transitioning to Java 9, consider <tt><a href="https://docs.oracle.com/javase/9/docs/api/java/lang/Runtime.Version.html" target=_blank>java.lang.Runtime.Version</a></tt>
  * @author Michael Bergens
  */
 public class SemanticVersion implements Comparable<SemanticVersion> {

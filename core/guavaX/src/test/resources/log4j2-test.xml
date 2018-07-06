@@ -9,7 +9,7 @@
 
         <appender type="Console" name="STDOUT">
             <layout type="PatternLayout">
-                <pattern>%d{HH:mm:ss} [%thread:%-4r] %-5level %logger{10} - %msg%n</pattern>
+                <pattern>%d{HH:mm:ss} [%thread:%-4r] %-5level %logger{10} - %msg\n</pattern>
             </layout>
         </appender>
 
@@ -20,7 +20,7 @@
                  other format elements:
                  http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html
                 -->
-                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS EEE} %contextName:%marker %p [%thread] &lt;%r&gt; |%file#%L| %m%n</pattern>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS EEE} %contextName:%marker %p [%thread] &lt;%r&gt; |%file#%L| %m\n</pattern>
             </layout>
         </appender>
 
